@@ -16,13 +16,8 @@
 - `cd minimal-webpack-babel-setup`
 - `npm install` or `yarn install`
 - `npm start` or `yarn start`
-- visit `http://localhost:8080/`
+- visit `http://localhost:8000/`
 - for a production build, run `npm build` or `yarn build`
-
-### Terser Bug
-
-At the moment (Feb 3rd, 2019) webpack crashes due to a bug in the **terser-webpack-plugin**.  
-That's why I added a [fixed terser version as a workaround](https://github.com/webpack-contrib/terser-webpack-plugin/issues/66).
 
 ## Credits
 

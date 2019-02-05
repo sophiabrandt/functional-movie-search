@@ -6,15 +6,14 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true // set to true if you want JS source maps
-      }),
-      new OptimizeCSSAssetsPlugin({})
-    ]
+  output: {
+    path: __dirname + "/dist",
+    publicPath: "/",
+    filename: "bundle.js"
+  },
+  devServer: {
+    contentBase: "./dist",
+    port: 8000
   },
   module: {
     rules: [
@@ -52,12 +51,14 @@ module.exports = {
   resolve: {
     extensions: ["*", ".js", ".jsx"]
   },
-  output: {
-    path: __dirname + "/dist",
-    publicPath: "/",
-    filename: "bundle.js"
-  },
-  devServer: {
-    contentBase: "./dist"
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true // set to true if you want JS source maps
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
   }
 };
