@@ -15,7 +15,7 @@
 - `git clone git@github.com:sophiabrandt/minimal-webpack-babel-setup.git`
 - `cd minimal-webpack-babel-setup`
 - `npm install` or `yarn install`
-- `npm start` or `yarn start`
+- `npm dev` or `yarn dev`
 - visit `http://localhost:8000/`
 - for a production build, run `npm build` or `yarn build`
 
