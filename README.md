@@ -9,6 +9,7 @@
 - Babel 7
 - HTML & CSS Loading
 - production build: cleans distribution folder before generating new files & minifies Javascript, HTML and CSS
+- production build: with chunkhash for Javascript and CSS
 
 ## Installation & Usage
 
@@ -23,6 +24,7 @@
 
 - [Valentino Gagliardi: Webpack 4 Tutorial: from 0 Conf to Production Mode](https://www.valentinog.com/blog/webpack-tutorial/)
 - [Robin Wieruch: React + Webpack 4 + Babel 7 Setup Tutorial](https://www.robinwieruch.de/minimal-react-webpack-babel-setup/)
+- _update: hashing:_ [A tale of Webpack 4 and how to finally configure it in the right way. Updated.](https://hackernoon.com/a-tale-of-webpack-4-and-how-to-finally-configure-it-in-the-right-way-4e94c8e7e5c1)
 
 ## License
 
