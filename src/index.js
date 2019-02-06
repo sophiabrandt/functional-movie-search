@@ -1,3 +1,3 @@
-import "./index.css";
+import "./main.css";
 
 console.log("My Minimal Webpack Babel Setup");

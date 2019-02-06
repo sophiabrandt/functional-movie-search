@@ -4,12 +4,13 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const WebpackMd5Hash = require("webpack-md5-hash");
 
 module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js"
+    filename: "[name].[chunkhash].js"
   },
   devServer: {
     contentBase: "./dist",
@@ -41,12 +42,13 @@ module.exports = {
     new CleanWebpackPlugin("dist", {}),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
-      filename: "./index.html"
+      filename: "./index.html",
+      hash: true
     }),
     new MiniCssExtractPlugin({
-      filename: "index.css",
-      chunkFilename: "[id].css"
-    })
+      chunkFilename: "style.[contenthash].css"
+    }),
+    new WebpackMd5Hash()
   ],
   resolve: {
     extensions: ["*", ".js", ".jsx"]
