@@ -1,6 +1,6 @@
 import * as R from "ramda";
 
-const MSGS = {
+export const MSGS = {
   SEARCH_INPUT: "SEARCH_INPUT",
   INITIATE_SEARCH: "INITIATE_SEARCH",
   HTTP_SUCCESS: "HTTP_SUCCESS",
@@ -14,13 +14,11 @@ function movieDBUrl(search) {
   return `http://www.omdbapi.com/?s=${encodeURI(search)}&apikey=${apiKey}`;
 }
 
-function httpSuccessMsg(response) {
-  return {
-    type: MSGS.HTTP_SUCCESS,
-    search,
-    response
-  };
-}
+const httpSuccessMsg = R.curry((search, response) => ({
+  type: MSGS.HTTP_SUCCESS,
+  search,
+  response
+}));
 
 function httpErrorMsg(error) {
   return {
@@ -54,22 +52,27 @@ function update(msg, model) {
         { model },
         {
           request: { url: movieDBUrl(search) },
-          successMsg: httpSuccessMsg,
+          successMsg: httpSuccessMsg(search),
           errorMsg: httpErrorMsg
         }
       ];
     }
     case MSGS.HTTP_SUCCESS: {
       const { response } = msg;
-      const { movies } = model;
+      const newMovies = R.pathOr([], ["data", "Search"], response);
+      const updatedMovies = R.map(movie => {
+        const { Title: title, Year: year, imdbID, Poster: poster } = movie;
+        return { title, year, imdbID, poster };
+      }, newMovies);
+      return { ...model, movies: updatedMovies };
     }
-    /*  case MSGS.HTTP_ERROR: {
+    case MSGS.HTTP_ERROR: {
       const { error } = msg;
       return { ...model, error: error.message };
-    } */
-    /*     case MSGS.CLEAR_ERROR: {
+    }
+    case MSGS.CLEAR_ERROR: {
       return { ...model, error: null };
-    } */
+    }
   }
   return model;
 }

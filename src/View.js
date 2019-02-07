@@ -21,7 +21,7 @@ const {
   button
 } = hh(h);
 
-function movieCard(title, imdbID, year, poster) {
+function movieCard(title, year, imdbID, poster) {
   return a(
     {
       className: "db center mw5 tc black link dim",
@@ -46,8 +46,8 @@ function movieCard(title, imdbID, year, poster) {
 }
 
 function movieView(movie) {
-  const { title, year, poster, imdbID } = movie;
-  return movieCard(title, imdbID, year, poster);
+  const { title, year, imdbID, poster } = movie;
+  return movieCard(title, year, imdbID, poster);
 }
 
 function moviesView(model) {
@@ -114,7 +114,7 @@ function error(dispatch, model) {
 function view(dispatch, model) {
   return div({ className: "mw8 center" }, [
     h1({ className: "f2 pv2 bb" }, "Functional Movie Search"),
-    // error(dispatch, model),
+    error(dispatch, model),
     searchView(dispatch, model),
     moviesView(model),
     pre(JSON.stringify(model, null, 2))
