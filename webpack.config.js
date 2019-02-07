@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const WebpackMd5Hash = require("webpack-md5-hash");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   entry: "./src/index.js",
@@ -48,7 +49,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       chunkFilename: "style.[contenthash].css"
     }),
-    new WebpackMd5Hash()
+    new WebpackMd5Hash(),
+    new Dotenv()
   ],
   resolve: {
     extensions: ["*", ".js", ".jsx"]
