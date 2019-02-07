@@ -48,7 +48,7 @@ function update(msg, model) {
     case MSGS.INITIATE_SEARCH: {
       const { search } = model;
       return [
-        { model },
+        { ...model },
         {
           request: { url: movieDBUrl(search) },
           successMsg: httpSuccessMsg(),
@@ -63,7 +63,7 @@ function update(msg, model) {
         const { Title: title, Year: year, imdbID, Poster: poster } = movie;
         return { title, year, imdbID, poster };
       }, newMovies);
-      return { ...model, movies: updatedMovies };
+      return { ...model, search: "", error: null, movies: updatedMovies };
     }
     case MSGS.HTTP_ERROR: {
       const { error } = msg;
