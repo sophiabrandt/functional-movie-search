@@ -14,11 +14,10 @@ function movieDBUrl(search) {
   return `http://www.omdbapi.com/?s=${encodeURI(search)}&apikey=${apiKey}`;
 }
 
-const httpSuccessMsg = R.curry((search, response) => ({
+const httpSuccessMsg = () => response => ({
   type: MSGS.HTTP_SUCCESS,
-  search,
   response
-}));
+});
 
 function httpErrorMsg(error) {
   return {
@@ -52,7 +51,7 @@ function update(msg, model) {
         { model },
         {
           request: { url: movieDBUrl(search) },
-          successMsg: httpSuccessMsg(search),
+          successMsg: httpSuccessMsg(),
           errorMsg: httpErrorMsg
         }
       ];
