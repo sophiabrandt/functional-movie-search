@@ -1,6 +1,6 @@
 import * as R from "ramda";
 
-export const MSGS = {
+const MSGS = {
   SEARCH_INPUT: "SEARCH_INPUT",
   INITIATE_SEARCH: "INITIATE_SEARCH",
   HTTP_SUCCESS: "HTTP_SUCCESS",

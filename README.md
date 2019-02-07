@@ -14,6 +14,7 @@ Part of the code is from [Functional Programming For Beginners with JavaScript](
 - [virtual-dom](https://github.com/Matt-Esch/virtual-dom)
 - [hyperscript-helpers ](https://github.com/ohanhi/hyperscript-helpers)
 - [Ramda](https://ramdajs.com)
+- [minireset.css](https://github.com/jgthms/minireset.css)
 - [Tachyons](http://tachyons.io/)
 - [Open Movie Database](http://www.omdbapi.com/)
 - Webpack & webpack-dev-server
@@ -27,4 +28,4 @@ Part of the code is from [Functional Programming For Beginners with JavaScript](
 
 ## Credits & License
 
-Most code originally written by [James Moore](https://github.com/knowthen/). Adapted for learning purposes by Sophia Brandt.
+Part of the code originally written by [James Moore](https://github.com/knowthen/). Adapted for learning purposes by Sophia Brandt.

@@ -18,13 +18,14 @@ const {
   dl,
   dt,
   dd,
-  button
+  i
 } = hh(h);
 
 function movieCard(title, year, imdbID, poster) {
+  const noPoster = poster === "N/A";
   return a(
     {
-      className: "db center mw5 tc black link dim",
+      className: "db mh1 mw5 tc black link dim",
       title: title,
       href: `https://imdb.com/title/${imdbID}`,
       target: "_blank"
@@ -33,7 +34,7 @@ function movieCard(title, year, imdbID, poster) {
       img({
         className: "db ba b--black-10",
         alt: `${title} Movie Poster`,
-        src: poster
+        src: noPoster ? "https://placekitten.com/300/400" : poster
       }),
       dl({ className: "mt2 f6 lh-copy" }, [
         dt({ className: "clip" }, "Title"),
@@ -52,7 +53,7 @@ function movieView(movie) {
 
 function moviesView(model) {
   const movies = R.map(movieView, model.movies);
-  return div({ className: "flex justify-between" }, movies);
+  return div({ className: "flex flex-wrap justify-around" }, movies);
 }
 
 function fieldSetView(inputValue, fieldSetId, inputId, labelText, oninput) {
@@ -101,14 +102,13 @@ function error(dispatch, model) {
   if (!model.error) {
     return null;
   }
-  return div({ className: "pa2 mv2 bg-red white relative" }, [
-    model.error,
-    i({
-      className:
-        "white absolute top-0 right-0 mt1 mr1 fa fa-remove pointer black-40",
+  return div(
+    {
+      className: "pa2 mv2 bg-red white relative pointer",
       onclick: () => dispatch(clearErrorMsg)
-    })
-  ]);
+    },
+    model.error
+  );
 }
 
 function view(dispatch, model) {
@@ -116,8 +116,8 @@ function view(dispatch, model) {
     h1({ className: "f2 pv2 bb" }, "Functional Movie Search"),
     error(dispatch, model),
     searchView(dispatch, model),
-    moviesView(model),
-    pre(JSON.stringify(model, null, 2))
+    moviesView(model)
+    // pre(JSON.stringify(model, null, 2))
   ]);
 }
 

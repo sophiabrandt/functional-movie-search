@@ -25,10 +25,14 @@ function httpEffects(dispatch, command) {
   if (command === null) {
     return;
   }
-  const { request, successMsg } = command;
-  axios(request).then(response => {
-    dispatch(successMsg(response));
-  });
+  const { request, successMsg, errorMsg } = command;
+  axios(request)
+    .then(response => {
+      dispatch(successMsg(response));
+    })
+    .catch(error => {
+      dispatch(errorMsg(error));
+    });
 }
 
 export default app;
