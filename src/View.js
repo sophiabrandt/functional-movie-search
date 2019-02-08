@@ -112,7 +112,7 @@ function error(dispatch, model) {
 
 function view(dispatch, model) {
   return div({ className: "mw8 center" }, [
-    h1({ className: "f2 pv2 bb" }, "Functional Movie Search"),
+    h1({ className: "f2 pv2 bb" }, "(Mostly) Functional Movie Search"),
     error(dispatch, model),
     searchView(dispatch, model),
     moviesView(model)
