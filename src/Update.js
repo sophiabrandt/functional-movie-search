@@ -11,7 +11,7 @@ const MSGS = {
 const apiKey = process.env.OMDB_API_KEY;
 
 function movieDBUrl(search) {
-  return `http://www.omdbapi.com/?s=${encodeURI(search)}&apikey=${apiKey}`;
+  return `https://www.omdbapi.com/?s=${encodeURI(search)}&apikey=${apiKey}`;
 }
 
 function httpSuccessMsg() {
