@@ -2,12 +2,15 @@
   "name": "minimal-webpack-babel-setup",
   "author": "Sophia Brandt",
   "url": "https://github.com/sophiabrandt/minimal-webpack-babel-setup",
+  "homepage": "http://sophiabrandt.github.io/functional-movie-search",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --config ./webpack.config.js --mode development --open",
-    "build": "webpack --config ./webpack.config.js --mode production"
+    "build": "webpack --config ./webpack.config.js --mode production",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist"
   },
   "babel": {
     "presets": [
@@ -21,12 +24,14 @@
     "clean-webpack-plugin": "1.0.1",
     "css-loader": "2.1.0",
     "dotenv-webpack": "^1.7.0",
+    "gh-pages": "^2.0.1",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "3.2.0",
     "hyperscript-helpers": "^3.0.3",
     "mini-css-extract-plugin": "0.5.0",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "ramda": "^0.26.1",
+    "tachyons": "^4.11.1",
     "terser-webpack-plugin": "^1.2.2",
     "virtual-dom": "^2.1.1",
     "webpack": "4.29.0",

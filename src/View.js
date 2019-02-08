@@ -17,8 +17,7 @@ const {
   img,
   dl,
   dt,
-  dd,
-  i
+  dd
 } = hh(h);
 
 function movieCard(title, year, imdbID, poster) {

@@ -14,10 +14,14 @@ function movieDBUrl(search) {
   return `http://www.omdbapi.com/?s=${encodeURI(search)}&apikey=${apiKey}`;
 }
 
-const httpSuccessMsg = () => response => ({
-  type: MSGS.HTTP_SUCCESS,
-  response
-});
+function httpSuccessMsg() {
+  return function(response) {
+    return {
+      type: MSGS.HTTP_SUCCESS,
+      response
+    };
+  };
+}
 
 function httpErrorMsg(error) {
   return {

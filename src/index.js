@@ -3,6 +3,7 @@ import update, { showFormMsg } from "./Update";
 import view from "./View";
 import app from "./App";
 import "./main.css";
+import tachyons from 'tachyons';
 
 const node = document.getElementById("app");
 
