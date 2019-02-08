@@ -19,9 +19,10 @@ Part of the code is from [Functional Programming For Beginners with JavaScript](
 - [hyperscript-helpers ](https://github.com/ohanhi/hyperscript-helpers)
 - [Ramda](https://ramdajs.com)
 - [minireset.css](https://github.com/jgthms/minireset.css)
-- [Tachyons](http://tachyons.io/)
-- [Open Movie Database](http://www.omdbapi.com/)
+- [Tachyons](https://tachyons.io/)
+- [Open Movie Database](https://www.omdbapi.com/)
 - [PlaceKitten](https://placekitten.com)
+- [Github Corners](https://github.com/tholman/github-corners)
 - Webpack & webpack-dev-server
 
 ## Installation
