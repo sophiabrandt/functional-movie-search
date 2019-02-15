@@ -34,8 +34,8 @@
     "tachyons": "^4.11.1",
     "terser-webpack-plugin": "^1.2.2",
     "virtual-dom": "^2.1.1",
-    "webpack": "4.29.0",
-    "webpack-cli": "3.2.1",
+    "webpack": "4.29.3",
+    "webpack-cli": "3.2.3",
     "webpack-dev-server": "3.1.14",
     "webpack-md5-hash": "0.0.6"
   },
