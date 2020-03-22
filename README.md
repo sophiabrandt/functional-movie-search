@@ -28,10 +28,32 @@ Part of the code is from [Functional Programming For Beginners with JavaScript](
 
 ## Installation
 
-- `git clone git@github.com:sophiabrandt/functional-movie-search.git`
-- `npm install` or `yarn install`
-- `npm dev` or `yarn dev`
-- visit `http://localhost:8000/`
+1. Clone the repository
+
+```sh
+git clone git@github.com:sophiabrandt/functional-movie-search.git
+```
+
+2. Get API key
+
+Get an API key from [https://www.omdbapi.com/](https://www.omdbapi.com/).  
+Create a new file called `.env` and add the following line:
+
+```
+OMDB_API_KEY=<your-key-here>
+```
+
+Replace with your API key.
+
+3. Install dependencies
+
+`npm install` or `yarn install`
+
+4. Run application
+
+`npm run dev` or `yarn run dev`
+
+Visit `http://localhost:8000/`.
 
 ## Credits & License
 
